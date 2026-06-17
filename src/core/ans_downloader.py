@@ -20,9 +20,9 @@ class ANSDownloader(Downloader):
         """
         self.zip_urls = zip_urls
         self.dataset_source_name = dataset_source_name
-        self.landzone_root = "data/landzone"
-        self.zips_root = f"{self.landzone_root}/zips"
-        self.csv_root = f"{self.landzone_root}/csv"
+        self.landzone_root = Path("data/landzone")
+        self.zips_root = self.landzone_root / "zips"
+        self.csv_root = self.landzone_root / "csv"
 
     def download_zip(self, zip_url: str) -> bytes | None:
         """Fetch a ZIP file from the given URL and return its raw content.
